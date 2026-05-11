@@ -9,66 +9,89 @@
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container">
-            <a href="index.html" class="navbar-brand">← BRAYANT MARKET</a>
+            <a href="index.html" class="navbar-brand">← CAMAVINGA-MARKET</a>
             <span class="text-white">🚗 Voitures</span>
         </div>
     </nav>
 
     <div class="container mt-4">
-        <h1>Voitures Disponibles</h1>
+        <h1>Voitures Disponibles </h1>
         
-        <!-- FILTRES -->
-        <div class="row mb-4 p-3 bg-light rounded">
-            <div class="col-md-6">
-                <label class="fw-bold">Marque :</label>
-                <select id="filtreMarque" class="form-select" onchange="filtrerVoitures()">
-                    <option value="all">Toutes les marques</option>
-                    <option value="Toyota">Toyota</option>
-                    <option value="Mercedes">Mercedes</option>
-                </select>
-            </div>
-            <div class="col-md-6">
-                <label class="fw-bold">Prix max :</label>
-                <select id="filtrePrix" class="form-select" onchange="filtrerVoitures()">
-                    <option value="all">Tous les prix</option>
-                    <option value="3000000">Moins de 3 000 000 FCFA</option>
-                    <option value="5000000">Moins de 5 000 000 FCFA</option>
-                </select>
-            </div>
-        </div>
-
-        <!-- VOITURE 1 -->
         <div class="row" id="listeVoitures">
-            <div class="col-md-4 mb-4 voiture-item" data-marque="Toyota" data-prix="4500000">
-                <div class="card">
-                    <img src="images/corolla.jpg" class="card-img-top" style="height:200px; object-fit:cover;">
+            
+            <!-- VOITURE 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="images/suzuki-rouge.jpg" class="card-img-top" style="height:200px; object-fit:cover;">
                     <div class="card-body">
-                        <h5>Toyota Corolla 2018</h5>
-                        <p>
-                            <span class="badge bg-success">Essence</span>
-                            <span class="badge bg-info">Auto</span>
-                        </p>
-                        <h4 class="text-primary">4 500 000 FCFA</h4>
-                        <a href="commande.html?produit=Toyota Corolla 2018&montant=4500000" class="btn btn-primary w-100">Commander</a>
+                        <h5>Suzuki Rouge 1</h5>
+                        <h4 class="text-primary">3 500 000 FCFA</h4>
+                        <a href="commande.html?produit=Suzuki Rouge 1&montant=3500000" class="btn btn-primary w-100">Commander</a>
                     </div>
                 </div>
             </div>
+
+            <!-- VOITURE 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="images/premiere-main.jpg" class="card-img-top" style="height:200px; object-fit:cover;">
+                    <div class="card-body">
+                        <h5>Première Main</h5>
+                        <h4 class="text-primary">4 500 000 FCFA</h4>
+                        <a href="commande.html?produit=Première Main&montant=4500000" class="btn btn-primary w-100">Commander</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VOITURE 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="images/rouge.jpg" class="card-img-top" style="height:200px; object-fit:cover;">
+                    <div class="card-body">
+                        <h5>Voiture Rouge</h5>
+                        <h4 class="text-primary">2 800 000 FCFA</h4>
+                        <a href="commande.html?produit=Voiture Rouge&montant=2800000" class="btn btn-primary w-100">Commander</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VOITURE 4 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="images/suzuki.jpg" class="card-img-top" style="height:200px; object-fit:cover;">
+                    <div class="card-body">
+                        <h5>Suzuki</h5>
+                        <h4 class="text-primary">3 200 000 FCFA</h4>
+                        <a href="commande.html?produit=Suzuki&montant=3200000" class="btn btn-primary w-100">Commander</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VOITURE 5 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="images/voiture-rouge.jpg" class="card-img-top" style="height:200px; object-fit:cover;">
+                    <div class="card-body">
+                        <h5>Voiture Rouge 2</h5>
+                        <h4 class="text-primary">6 200 000 FCFA</h4>
+                        <a href="commande.html?produit=Voiture Rouge 2&montant=6200000" class="btn btn-primary w-100">Commander</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VOITURE 6 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="images/voitures.jpg" class="card-img-top" style="height:200px; object-fit:cover;">
+                    <div class="card-body">
+                        <h5>Voiture</h5>
+                        <h4 class="text-primary">8 500 000 FCFA</h4>
+                        <a href="commande.html?produit=Voiture&montant=8500000" class="btn btn-primary w-100">Commander</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-
-    <script>
-        function filtrerVoitures() {
-            const marqueChoisie = document.getElementById('filtreMarque').value;
-            const prixMax = document.getElementById('filtrePrix').value;
-            const voitures = document.querySelectorAll('.voiture-item');
-            voitures.forEach(voiture => {
-                const marqueVoiture = voiture.getAttribute('data-marque');
-                const prixVoiture = parseInt(voiture.getAttribute('data-prix'));
-                const matchMarque = marqueChoisie === 'all' || marqueVoiture === marqueChoisie;
-                const matchPrix = prixMax === 'all' || prixVoiture <= parseInt(prixMax);
-                voiture.style.display = (matchMarque && matchPrix) ? 'block' : 'none';
-            });
-        }
-    </script>
 </body>
 </html>
