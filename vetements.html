@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vêtements - CAMAVINGA-MARKET</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">← BRAYANT MARKET</a>
+            <span class="text-white">👕 Vêtements</span>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Vêtements & Chaussures Douala</h1>
+        
+        <!-- FILTRES -->
+        <div class="row mb-4 p-3 bg-light rounded">
+            <div class="col-md-6">
+                <label class="fw-bold">Type :</label>
+                <select id="filtreType" class="form-select" onchange="filtrerVetements()">
+                    <option value="all">Tous les types</option>
+                    <option value="Robe">Robe/Jupe</option>
+                    <option value="Culotte">Culotte/Short</option>
+                    <option value="T-shirt">T-shirt</option>
+                    <option value="Autre">Autre</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label class="fw-bold">Prix max :</label>
+                <select id="filtrePrix" class="form-select" onchange="filtrerVetements()">
+                    <option value="all">Tous les prix</option>
+                    <option value="5000">Moins de 5 000 FCFA</option>
+                    <option value="10000">Moins de 10 000 FCFA</option>
+                    <option value="20000">Moins de 20 000 FCFA</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row" id="listeVetements">
+            
+            <!-- VETEMENT 1 -->
+            <div class="col-md-4 mb-4 vetement-item" data-type="Autre" data-prix="7000">
+                <div class="card h-100">
+                    <img src="images/vetements/chick.jpg" class="card-img-top" style="height:250px; object-fit:cover;">
+                    <div class="card-body">
+                        <h5>Ensemble Chick</h5>
+                        <p><span class="badge bg-secondary">Taille M</span></p>
+                        <h4 class="text-primary">7 000 FCFA</h4>
+                        <a href="commande.html?produit=Ensemble Chick Taille M&montant=7000" class="btn btn-primary w-100">Commander</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VETEMENT 2 -->
+            <div class="col-md-4 mb-4 vetement-item" data-type="Autre" data-prix="8000">
+                <div class="card h-100">
+                    <img src="images/vetements/chill.jpg" class="card-img-top" style="height:250px; object-fit:cover;">
+                    <div class="card-body">
+                        <h5>Tenue Chill</h5>
+                        <p><span class="badge bg-secondary">Taille L</span></p>
+                        <h4 class="text-primary">8 000 FCFA</h4>
+                        <a href="commande.html?produit=Tenue Chill Taille L&montant=8000" class="btn btn-primary w-100">Commander</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VETEMENT 3 -->
+            <div class="col-md-4 mb-4 vetement-item" data-type="Culotte" data-prix="5000">
+                <div class="card h-100">
+                    <img src="images/vetements/culotte-homme.jpg" class="card-img-top" style="height:250px; object-fit:cover;">
+                    <div class="card-body">
+                        <h5>Culotte Homme</h5>
+                        <p><span class="badge bg-info">Homme</span> <span class="badge bg-secondary">Taille XL</span></p>
+                        <h4 class="text-primary">5 000 FCFA</h4>
+                        <a href="commande.html?produit=Culotte Homme Taille XL&montant=5000" class="btn btn-primary w-100">Commander</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VETEMENT 4 -->
+            <div class="col-md-4 mb-4 vetement-item" data-type="Culotte" data-prix="4500">
+                <div class="card h-100">
+                    <img src="images/vetements/culotte.jpg" class="card-img-top" style="height:250px; object-fit:cover;">
+                    <div class="card-body">
+                        <h5>Culotte Dame</h5>
+                        <p><span class="badge bg-danger">Dame</span> <span class="badge bg-secondary">Taille M</span></p>
+                        <h4 class="text-primary">4 500 FCFA</h4>
+                        <a href="commande.html?produit=Culotte Dame Taille M&montant=4500" class="btn btn-primary w-100">Commander</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VETEMENT 5 -->
+            <div class="col-md-4 mb-4 vetement-item" data-type="Robe" data-prix="12000">
+                <div class="card h-100">
+                    <img src="images/vetements/jupe-dame.jpg" class="card-img-top" style="height:250px; object-fit:cover;">
+                    <div class="card-body">
+                        <h5>Jupe Dame</h5>
+                        <p><span class="badge bg-danger">Dame</span> <span class="badge bg-secondary">Taille L</span></p>
+                        <h4 class="text-primary">12 000 FCFA</h4>
+                        <a href="commande.html?produit=Jupe Dame Taille L&montant=12000" class="btn btn-primary w-100">Commander</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VETEMENT 6 -->
+            <div class="col-md-4 mb-4 vetement-item" data-type="Robe" data-prix="10000">
+                <div class="card h-100">
+                    <img src="images/vetements/jupe-noir.jpg" class="card-img-top" style="height:250px; object-fit:cover;">
+                    <div class="card-body">
+                        <h5>Jupe Noire</h5>
+                        <p><span class="badge bg-dark">Noir</span> <span class="badge bg-secondary">Taille S</span></p>
+                        <h4 class="text-primary">10 000 FCFA</h4>
+                        <a href="commande.html?produit=Jupe Noire Taille S&montant=10000" class="btn btn-primary w-100">Commander</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VETEMENT 7 -->
+            <div class="col-md-4 mb-4 vetement-item" data-type="Autre" data-prix="15000">
+                <div class="card h-100">
+                    <img src="images/vetements/responsable.jpg" class="card-img-top" style="height:250px; object-fit:cover;">
+                    <div class="card-body">
+                        <h5>Tenue Responsable</h5>
+                        <p><span class="badge bg-warning">Classe</span> <span class="badge bg-secondary">Taille M</span></p>
+                        <h4 class="text-primary">15 000 FCFA</h4>
+                        <a href="commande.html?produit=Tenue Responsable Taille M&montant=15000" class="btn btn-primary w-100">Commander</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VETEMENT 8 -->
+            <div class="col-md-4 mb-4 vetement-item" data-type="Autre" data-prix="6000">
+                <div class="card h-100">
+                    <img src="images/vetements/rose-bonbon.jpg" class="card-img-top" style="height:250px; object-fit:cover;">
+                    <div class="card-body">
+                        <h5>Ensemble Rose Bonbon</h5>
+                        <p><span class="badge" style="background-color: pink;">Rose</span> <span class="badge bg-secondary">Taille S</span></p>
+                        <h4 class="text-primary">6 000 FCFA</h4>
+                        <a href="commande.html?produit=Ensemble Rose Bonbon Taille S&montant=6000" class="btn btn-primary w-100">Commander</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VETEMENT 9 -->
+            <div class="col-md-4 mb-4 vetement-item" data-type="T-shirt" data-prix="5000">
+                <div class="card h-100">
+                    <img src="images/vetements/white.jpg" class="card-img-top" style="height:250px; object-fit:cover;">
+                    <div class="card-body">
+                        <h5>T-shirt Blanc</h5>
+                        <p><span class="badge bg-light text-dark">Blanc</span> <span class="badge bg-secondary">Taille L</span></p>
+                        <h4 class="text-primary">5 000 FCFA</h4>
+                        <a href="commande.html?produit=T-shirt Blanc Taille L&montant=5000" class="btn btn-primary w-100">Commander</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function filtrerVetements() {
+            const typeChoisi = document.getElementById('filtreType').value;
+            const prixMax = document.getElementById('filtrePrix').value;
+            const vetements = document.querySelectorAll('.vetement-item');
+            
+            vetements.forEach(vetement => {
+                const type = vetement.getAttribute('data-type');
+                const prix = parseInt(vetement.getAttribute('data-prix'));
+                
+                const matchType = typeChoisi === 'all' || type === typeChoisi;
+                const matchPrix = prixMax === 'all' || prix <= parseInt(prixMax);
+                
+                vetement.style.display = (matchType && matchPrix) ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
