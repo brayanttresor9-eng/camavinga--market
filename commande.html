@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commander - CAMAVINGA-MARKET</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5" style="max-width: 600px;">
+        <h1 class="text-center">𝐂𝐎𝐌𝐄𝐍𝐓 𝐏𝐀𝐒𝐄𝐑 UNE COMMANDE?</h1>
+        <form class="mt-4 p-4 border rounded">
+            <div class="mb-3">
+                <label class="form-label">𝐀𝐫𝐭𝐢𝐜𝐥𝐞 :</label>
+                <input type="text" class="form-control" name="article" id="article" readonly>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">𝐍𝐨𝐦 :</label>
+                <input type="text" class="form-control" placeholder="Votre nom">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">𝐏𝐫𝐞́𝐧𝐨𝐦 :</label>
+                <input type="text" class="form-control" placeholder="Votre prénom">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">𝐕𝐢𝐥𝐥𝐞 :</label>
+                <input type="text" class="form-control" placeholder="Douala">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">𝐐𝐮𝐚𝐫𝐭𝐢𝐞𝐫 :</label>
+                <input type="text" class="form-control" placeholder="Bonamoussadi">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">𝐍𝐮𝐦𝐞́𝐫𝐨 𝐝𝐞 𝐭𝐞𝐥𝐞́𝐩𝐡𝐨𝐧𝐞 :</label>
+                <input type="tel" class="form-control" placeholder="+237 6XX XXX XXX">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">𝐌𝐨𝐧𝐭𝐚𝐧𝐭 𝐚̀ 𝐩𝐚𝐲𝐞𝐫 :</label>
+                <input type="text" class="form-control" name="montant" id="montant" readonly>
+            </div>
+            <button type="button" class="btn btn-success w-100" onclick="envoyerWhatsApp()">VALIDER SUR WHATSAPP</button>
+            <div class="alert alert-info mt-3">
+                <strong>Livraison :</strong> 2 à 3 jours après validation du paiement Orange/MTN Money
+            </div>
+        </form>
+    </div>
 
+    <script>
+        // Pré-remplit article et montant depuis l'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById('article').value = urlParams.get('produit');
+        document.getElementById('montant').value = urlParams.get('montant') + ' FCFA';
+
+        function envoyerWhatsApp() {
+            const article = document.getElementById('article').value;
+            const montant = document.getElementById('montant').value;
+            const msg = `Bonjour CAMAVINGA-MARKET, je commande : ${article} - ${montant}`;
+            window.open(`https://wa.me/2376XXXXXXX?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
